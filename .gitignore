@@ -3,4 +3,5 @@ build
 dist
 liferay-theme.json
 .web_bundle_build
-.yo-rc.json
+.yo-rc.json%
+build_gradle
