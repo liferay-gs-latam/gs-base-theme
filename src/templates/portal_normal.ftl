@@ -51,8 +51,9 @@
 </div>
 
 <!-- inject:js -->
-<script>
-</script>
+
+<#--  Including Webpack JS Bundle  -->
+<script src='${javascript_folder}/compiled/bundle.js' type="text/javascript"></script>
 <!-- endinject -->
 
 </body>
