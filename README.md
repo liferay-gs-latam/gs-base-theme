@@ -3,24 +3,26 @@
 ## Install dependencies
 
 > Yeoman to create themes
-```
+
+```js
 npm install -g yo
 ```
 
 > Liferay theme generator
 
-```
+```js
 npm install -g generator-liferay-theme@^8.x.x
 ```
 
 > Project dependencies
-```
+
+```js
 npm i
 ```
 
 ## Configuring your theme app server
 
-```
+```js
 gulp init
 ```
 
