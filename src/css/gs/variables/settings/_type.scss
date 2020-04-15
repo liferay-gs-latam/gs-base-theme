@@ -1,0 +1,38 @@
+// Typography Settings
+// --
+
+$type-dir:  "../fonts";
+$type-name: 'rawline', sans-serif;
+$project-font-family: $type-name;
+
+$font-size-base: 1rem; // 16px
+$font-size-xxl: 1.75rem; // 28px
+$font-size-xl: 1.375; // 22px;
+$font-size-lg: 1.125rem; // 18px
+$font-size-sm: 0.875rem; // 14px
+$font-size-xs: 0.75rem; // 12px
+$font-size-xxs: 0.625rem; // 10px
+
+$project-body-size: 1rem; // 16px
+$project-line-height: 1.15;
+$project-small-size: 0.725rem; // ~12px
+
+$font-weight-light: 300;
+$font-weight-normal: 500;
+$font-weight-semi-bold: 500;
+$font-weight-semi-bold2: 600;
+$font-weight-bold: 700;
+$font-weight-bolder: 800;
+
+// Headlines
+$headings-font-weight: $font-weight-semi-bold;
+$headings-line-height: 1.29;
+$headings-color: $dark;
+$headings-font-weight: $font-weight-bold;
+
+$h1-font-size: 2.25rem; // 36px
+$h3-font-size: 1.8rem; 
+$h3-font-size: 1.5rem; 
+$h4-font-size: $font-size-lg; //18px
+$h5-font-size: 1rem; // 16px
+$h6-font-size: 0.875rem; // 14px

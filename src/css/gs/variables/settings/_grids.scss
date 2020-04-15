@@ -1,0 +1,61 @@
+// Grid Breakpoints, spacers and gutters
+// --
+
+$grid-breakpoints: (
+  // Extra small screen / phone
+  xs: 0,
+  // Small screen / phone
+  sm: 400px,
+  // Medium screen / tablet
+  md: 700px,
+  // Large screen / desktop
+  lg: 1140px,
+  // large - extra large screen
+  xlg: 1260px,
+  // Extra large screen / wide desktop
+  xl: 1400px
+);
+
+$container-max-widths: (
+  sm: 400px,
+  md: 700px,
+  lg: 1140px,
+  xlg: 1260px,
+  xl: 1400px
+);
+
+$project-sm: map-get($grid-breakpoints, sm);
+$project-md: map-get($grid-breakpoints, md);
+$project-lg: map-get($grid-breakpoints, lg);
+$project-xlg: map-get($grid-breakpoints, xlg);
+$project-xl: map-get($grid-breakpoints, xl);
+
+$project-xs-max: map-get($grid-breakpoints, sm) - 1;
+$project-sm-max: map-get($grid-breakpoints, md) - 1;
+$project-md-max: map-get($grid-breakpoints, lg) - 1;
+$project-xlg-max: map-get($grid-breakpoints, xlg) - 1;
+$project-lg-max: map-get($grid-breakpoints, xl) - 1;
+
+// Spacing
+
+$spacer: 1rem; //0.875rem; //14px
+$spacers: () !default;
+$spacers: map-merge((
+	0: 0,
+	1: ($spacer * .25),
+	2: ($spacer * .5),
+	3: ($spacer * 1),
+	4: ($spacer * 1.5),
+	5: ($spacer * 3),
+	6: ($spacer * 4.5),
+	7: ($spacer * 6),
+	8: ($spacer * 7.5),
+), $spacers);
+
+// $grid-gutter-width: 20px; //original 24
+
+// $border-radius: 0.3125rem; // 5px 
+// $border-radius-lg: 0.625rem; // 10px
+// $border-radius-sm: 0.1875rem; // 3px
+
+// $rounded-border-radius: $border-radius;
