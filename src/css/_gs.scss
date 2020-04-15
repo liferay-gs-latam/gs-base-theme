@@ -1,0 +1,18 @@
+// Main Project
+// --
+
+@import "gs/variables";
+@import "gs/utilities";
+@import "gs/globals";
+
+// To avoid side effects with Liferay
+.isl:not(.liferay-instance) {
+
+  @import "gs/components";
+  
+  &#wrapper {
+    font-family: $project-font-family;
+    font-size: $project-body-size;
+    font-weight: $font-weight-normal;
+  }
+}
