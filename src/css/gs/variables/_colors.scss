@@ -1,53 +1,71 @@
+// ------------------
 // Color definitions
-// -
+// ------------------
 
-// Project Color Pallete
+// Grey Tones
+// --
 
-$white: #fff;
-$gray: #939393;
-$light-gray: #EDEDED;
-$darkish-gray: #d8d8d8;
-$dark-gray: #6A6A6A;
-$darkest-gray: #292929;
-$blueish-gray: #7d9aaa;
+$white:           #fff;
+$light-gray:      #E9E5ED;
+$gray:            #D0CCD5;
+$darkish-gray:    #B0ABB7;
+$dark-gray:       #807B89;
+$darkest-gray:    #484158;
+
+// Project colors
+// --
+
+// Main color palette
+//...
+
+// System colors
+$green:         #22E650;
+$red:           #E64553;
+$light-blue:    #e1e4fb;
+$light-orange:  #F09829;
 
 // Bootstrap Main Colors
-// $default: $green;
-// $primary: $green;
-// $secondary: $gray;
-// $success: $light-green;
-// $info: $purple;
-// $warning: $orange;
-// $danger: $red;
-// $light: $white;
-// $dark: $darkest-gray;
-// $gray: $gray;
+// (Based on above Project colors)
+// --
 
+$default:              $dark-gray;
+$primary:              $dark-gray;
+$secondary:            $darkish-gray;
+$success:              $green;
+$info:                 $light-blue;
+$warning:              $light-orange;
+$danger:               $red;
+$light:                $white;
+$dark:                 $darkest-gray;
+$gray:                 $gray;
 
 // Theme Base Colors
-// $theme-colors: ();
-// $theme-colors: (
+// --
 
-// 	default: $default,
-// 	primary: $primary,
-// 	secondary: $secondary,
-// 	success: $success,
-// 	info: $info,
-// 	warning: $warning,
-// 	danger: $danger,
-// 	light: $light,
-// 	dark: $dark,
-// 	gray: $gray,
+$theme-colors: ();
+$theme-colors: (
 
-// );
+	default:           $default,
+	primary:           $primary,
+	secondary:         $secondary,
+	success:           $success,
+	info:              $info,
+	warning:           $warning,
+	danger:            $danger,
+	light:             $light,
+	dark:              $dark,
+	gray:              $gray,
+);
 
 // Global Component Colors
-// $body-bg:               $light;
-// $body-color:            $darkest-gray;
-// $link-color:            $default;
-// $link-hover-color:      $default;
+// --
+
+$body-bg:               $light;
+$body-color:            $darkest-gray;
+$link-color:            $default;
+$link-hover-color:      $secondary;
+$background-color:      $light;
 // $borders:               $dark;
-// $background-color:      $light;
 
 
 
