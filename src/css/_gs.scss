@@ -6,7 +6,7 @@
 @import "gs/globals";
 
 // To avoid side effects with Liferay
-.isl:not(.liferay-instance) {
+.#{$prefix}:not(.liferay-instance) {
 
   @import "gs/components";
   
