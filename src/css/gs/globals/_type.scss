@@ -16,6 +16,7 @@ $type-primary-name-trimmed: str-remove-whitespace($type-primary-name);
   }
 }
 
+// If there is a secondary type:
 // .remove-whitespace-checker-2 {
 //   &::after {
 //     content:'#{$type-secondary-name-trimmed}';
@@ -26,7 +27,7 @@ $type-primary-name-trimmed: str-remove-whitespace($type-primary-name);
 // -- 
 @mixin setup-type-variation($type-name, $type-variation, $type-style, $type-weight) {
   @font-face {
-    font-family: '#{$type-name}-#{$type-variation}';
+    font-family: '#{$type-name}';
     src: url('#{$type-name}-#{$type-variation}.eot');
     src: local('#{$type-name} #{$type-variation}'), local('#{$type-name}-#{$type-variation}'),
         url('#{$type-dir}/#{$type-name}-#{$type-variation}.eot?#iefix') format('embedded-opentype'),
@@ -42,10 +43,10 @@ $type-primary-name-trimmed: str-remove-whitespace($type-primary-name);
 // -- 
 
 // Primary Type
-@include setup-type-variation($type-primary-name-trimmed, Regular, normal, normal);
-@include setup-type-variation($type-primary-name-trimmed, Bold, normal, normal);
+@include setup-type-variation($type-primary-name-trimmed, Regular, normal, 400);
+@include setup-type-variation($type-primary-name-trimmed, Bold, normal, 700);
 
-// Secondary Type
-// @include setup-type-variation($type-secondary-name-trimmed, Regular, normal, normal);
-// @include setup-type-variation($type-secondary-name-trimmed, Bold, normal, normal);
-// @include setup-type-variation($type-secondary-name-trimmed, Light, normal, normal);
+// Secondary Type (If there is)
+// @include setup-type-variation($type-secondary-name-trimmed, Regular, normal, 400);
+// @include setup-type-variation($type-secondary-name-trimmed, Bold, normal, 700);
+// @include setup-type-variation($type-secondary-name-trimmed, Light, normal, 300);
