@@ -1,0 +1,102 @@
+// Text Definitions
+// --
+
+.#{$prefix}:not(.liferay-instance) {
+  
+  // Headings
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  .h1,
+  .h2,
+  .h3,
+  .h4,
+  .h5,
+  .h6 {
+    font-weight: $headings-font-weight;
+    line-height: $headings-line-height;
+    color: $headings-color;
+  }
+
+  h4,
+  .h4 {
+    font-weight: $font-weight-semi-bold;
+    font-size: $h4-font-size;
+  }
+
+  // Paragraphs
+  p,
+  .p {
+    font-size: $project-body-size;
+    line-height: $project-line-height;
+  }
+
+  // Small
+  small,
+  .small {
+    font-size: $project-small-size;
+    line-height: $project-line-height;
+  }
+
+  .caption {
+    font-weight: $font-weight-normal;
+    font-size: $font-size-xs;
+    text-transform: uppercase;
+  }
+
+  .text-lg {
+    font-size: $font-size-lg;
+    line-height: $project-line-height;
+  }
+
+  .text-md {
+    font-size: $font-size-base;
+    line-height: $project-line-height;
+  }
+
+  .text-sm {
+    font-size: $font-size-sm;
+    line-height: $project-line-height;
+  }
+
+  .text-xs {
+    font-size: $font-size-xs;
+    line-height: $project-line-height;
+  }
+
+  .text-xl {
+    font-size: $font-size-xl;
+    line-height: $project-line-height;
+  }
+
+  .font-weight-normal {
+    font-weight: $font-weight-normal;
+  }
+
+  .font-weight-light {
+    font-weight: $font-weight-light;
+  }
+
+  .font-weight-semi-bold {
+    font-weight: $font-weight-semi-bold;
+  }
+
+  .font-weight-semi-bold2 {
+    font-weight: $font-weight-semi-bold2;
+  }
+
+  .font-weight-bold {
+    font-weight: $font-weight-bold;
+  }
+
+  .font-weight-bolder {
+    font-weight: $font-weight-bolder;
+  }
+
+  a {
+    text-decoration: none !important;
+  }
+}

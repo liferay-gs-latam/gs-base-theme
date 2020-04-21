@@ -4,7 +4,7 @@
 .gecko,
 .firefox {
 
-  .gs:not(.liferay-instance) {
+  .#{$prefix}gs:not(.liferay-instance) {
 
   }
   
