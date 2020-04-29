@@ -1,0 +1,46 @@
+// Buttons
+// --
+
+.#{$prefix}-btn {
+
+  &--rounded {
+    border-radius: 44px;
+    width: 307px;
+    padding: 10px;
+    display: block;
+
+    // Mobile
+    // Or use @include media-query(null, $project-sm-max) to old versions of theme generator
+    @include media-breakpoint-down(sm) {
+      width: auto;
+    }
+  }
+
+  &--with-icon {
+    display: flex;
+    text-align: left;
+    justify-content: center;
+    align-items: center;
+
+    &__text {
+      max-width: 90%;
+    }
+  }
+
+  &--lg {
+    font-weight: 700;
+
+    .lexicon-icon {
+      width: 3em;
+      height: 3em;
+      margin: 0 10px 0 0;
+    }
+
+    .#{$prefix}-icon {
+      &::before {
+        font-size: 2em;
+        margin: 0 10px 0 0;
+      }
+    }
+  }
+}
