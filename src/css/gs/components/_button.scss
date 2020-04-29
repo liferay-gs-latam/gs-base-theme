@@ -10,6 +10,7 @@
     display: block;
 
     // Mobile
+    // Or use @include media-query(null, $project-sm-max) to old versions of theme generator
     @include media-breakpoint-down(sm) {
       width: auto;
     }
