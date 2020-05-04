@@ -4,11 +4,11 @@
 // Useful Mixins
 // ----
 
-@mixin card($radius: $ptb-card-radius-base, $shadow: $ptb-card-shadow, $bg-color: $ptb-card-bg-color) {
+@mixin card-box($radius: $project-card-radius-base, $shadow: $project-card-shadow, $bg-color: $project-card-default-bg-color, $padding: $project-card-padding) {
   border-radius: $radius;
   box-shadow: $shadow;
   background-color: $bg-color;
-  padding: $ptb-card-padding;
+  padding: $padding;
   margin: 0 0 25px 0;
 }
 
@@ -63,7 +63,7 @@
 // Must be placed inside the portlet decorator scope css class.
 // Ex.: "calendar-portlet portlet-decorator" in DOM. Including this mixin inside
 // your ".calendar-portlet"
-@mixin apply-ptb-back-button-to-portlet() {
+@mixin apply-back-button-to-portlet() {
 
   .portlet-icon-back {
     font-size: 14px;
