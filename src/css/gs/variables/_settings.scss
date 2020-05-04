@@ -2,9 +2,15 @@
 // Project Settings
 // ------------------
 
-// Project prefix
-$prefix: "gs";
+// Project Global settings
+// ---
+$prefix:           "gs";
+$project-shadow:   0px 2px 12px rgba(45, 70, 229, 0.12156862745098039);
 
 // Variable settings by
+// --- 
 @import "settings/grids";
 @import "settings/type";
+@import "settings/buttons";
+@import "settings/cards";
+
