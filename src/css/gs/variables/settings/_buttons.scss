@@ -1,6 +1,87 @@
 // Buttons settings
 // ------
 
-$btn-padding-y:    ($spacer * 0.5);
-$btn-padding-x:    ($spacer * 1);
-$btn-font-size: $font-size-sm;
+// Project Specific
+$btn-proj-radius:                               30px;
+
+// Overriding Bootstrap and Clay Atlas
+$btn-padding-y:               ($spacer * 0.5);
+$btn-padding-x:               ($spacer * 1);
+$btn-font-size:               $font-size-sm;
+$btn-focus-box-shadow:        $project-shadow;
+
+// Buttons variants, uncomment if you want to override this button states
+
+// $btn-primary: () !default;
+// $btn-primary: map-merge((
+// 	hover-bg: darken($primary, 5%),
+// 	hover-border-color: $primary,
+// 	focus-bg: rgba($primary, 0.75),
+// 	focus-box-shadow: $btn-focus-box-shadow,
+// 	disabled-bg: $primary,
+// 	active-bg: $orange,
+// 	active-border-color: $orange,
+// 	active-box-shadow: none,
+// 	active-focus-box-shadow: $btn-focus-box-shadow,
+// ), $btn-primary);
+
+// $btn-secondary: () !default;
+// $btn-secondary: map-merge((
+// 	bg: $secondary,
+// 	border-color: $secondary,
+// 	color: $white,
+// 	hover-bg: darken($secondary, 5%),
+// 	hover-border-color: $secondary,
+// 	hover-color: $white,
+// 	focus-bg: rgba($secondary, 0.75),
+// 	focus-border-color: $secondary,
+// 	focus-box-shadow: $btn-focus-box-shadow,
+// 	focus-color: $white,
+// 	disabled-bg: $secondary,
+// 	disabled-border-color: $secondary,
+// 	disabled-color: $white,
+// 	active-border-color: $vivid-blue,
+// 	active-color: $white,
+// 	active-bg: $vivid-blue,
+// 	active-box-shadow: none,
+// 	active-focus-box-shadow: $btn-focus-box-shadow,
+// 	loading-animation: null,
+// ), $btn-secondary);
+
+// $btn-outline-primary: () !default;
+// $btn-outline-primary: map-merge((
+// 	hover-bg: $primary-l3,
+// 	hover-color: $primary,
+// 	focus-bg: $primary-l3,
+// 	focus-box-shadow: map-get($btn-primary, focus-box-shadow),
+// 	focus-color: $primary,
+// 	disabled-bg: transparent,
+// 	disabled-border-color: map-get($btn-primary, bg),
+// 	disabled-color: map-get($btn-primary, bg),
+// 	active-bg: lighten(desaturate($primary, 42.05), 41.76),
+// 	active-color: $primary,
+// 	active-box-shadow: map-get($btn-primary, active-box-shadow),
+// 	active-focus-box-shadow: map-get($btn-primary, active-focus-box-shadow),
+// ), $btn-outline-primary);
+
+// $btn-outline-secondary: () !default;
+// $btn-outline-secondary: map-merge((
+// 	bg: null,
+// 	border-color: $secondary-l2,
+// 	color: null,
+// 	hover-bg: rgba($gray-900, 0.03),
+// 	hover-border-color: transparent,
+// 	hover-color: map-get($btn-secondary, hover-color),
+// 	focus-bg: rgba($gray-900, 0.03),
+// 	focus-border-color: transparent,
+// 	focus-box-shadow: map-get($btn-secondary, focus-box-shadow),
+// 	focus-color: map-get($btn-secondary, focus-color),
+// 	disabled-bg: transparent,
+// 	disabled-border-color: $secondary,
+// 	disabled-color: $secondary,
+// 	active-bg: rgba($gray-900, 0.06),
+// 	active-border-color: transparent,
+// 	active-box-shadow: map-get($btn-secondary, active-box-shadow),
+// 	active-color: map-get($btn-secondary, active-color),
+// 	active-focus-box-shadow: map-get($btn-secondary, active-focus-box-shadow),
+// ), $btn-outline-secondary);
