@@ -4,7 +4,7 @@
 // Useful Mixins
 // ----
 
-@mixin card-box($radius: $project-card-radius-base, $shadow: $project-card-shadow, $bg-color: $project-card-default-bg-color, $padding: $project-card-padding) {
+@mixin card-box($radius: $card-proj-radius-base, $shadow: $card-proj-shadow, $bg-color: $card-proj-default-bg-color, $padding: $card-proj-padding) {
   border-radius: $radius;
   box-shadow: $shadow;
   background-color: $bg-color;
