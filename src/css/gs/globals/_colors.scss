@@ -1,0 +1,14 @@
+// Create color and background classes with all theme colors
+
+@each $label, $color in $theme-colors {
+        
+    .color-#{$label} {
+        color: $color !important;
+    }
+
+    .background-#{$label} {
+        background-color: $color !important;
+    }
+    
+}
+

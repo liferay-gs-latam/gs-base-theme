@@ -3,15 +3,56 @@
 // ------------------
 
 // Project Global settings
-// ---
-$prefix:           "gs";
-$project-shadow:   0px 2px 12px rgba(45, 70, 229, 0.12156862745098039);
+$prefix: "gs";
+$lfr-controlmenu-bar-height: 48px;
+$lfr-controlmenu-bar-height-lg: 56px;
+$grid-gutter-width: 36px;
 
-// Variable settings by
-// --- 
-@import "settings/grids";
-@import "settings/type";
-@import "settings/buttons";
-@import "settings/cards";
-@import "settings/link";
 
+// Grid Breakpoints, spacers and gutters
+$grid-breakpoints: (
+	xs: 0,
+	sm: 375px,
+	md: 1080px,
+	lg: 1314px,
+	xl: 1920px
+
+);
+
+$container-max-widths: (
+	sm: 100%,
+	md: 1044px,
+	lg: 1278px,
+	xl: 1280px
+
+);
+
+
+$sm: map-get($grid-breakpoints, sm);
+$md: map-get($grid-breakpoints, md);
+$lg: map-get($grid-breakpoints, lg);
+$xl: map-get($grid-breakpoints, xl);
+
+$sm-container-width: map-get($container-max-widths, sm);
+$md-container-width: map-get($container-max-widths, md);
+$lg-container-width: map-get($container-max-widths, lg);
+$xl-container-width: map-get($container-max-widths, xl);
+
+$xs-max: map-get($grid-breakpoints, sm) - 1;
+$sm-max: map-get($grid-breakpoints, md) - 1;
+$md-max: map-get($grid-breakpoints, lg) - 1;
+$lg-max: map-get($grid-breakpoints, xl) - 1;
+
+
+// Font variables
+
+$font-family-primary: sans-serif;
+
+$font-weight-thin:      100;
+$font-weight-light:     300;
+$font-weight-normal:    400;
+$font-weight-medium:    500;
+$font-weight-semibold:  600;
+$font-weight-bold:      700;
+
+$line-height-base: 1.333;

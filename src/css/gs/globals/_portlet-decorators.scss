@@ -1,0 +1,170 @@
+
+// Common (all decorators)
+.portlet-boundary {
+
+	// margin-bottom: 18px;
+
+	> .portlet { 
+
+		margin-bottom: 0;
+
+		> .portlet-topper {
+			z-index: 999;
+			pointer-events: none;
+		}
+
+		&:hover {
+			> .portlet-topper {
+				pointer-events: all;
+			}
+		}
+
+		> .portlet-content {
+			padding: 0;
+			background: transparent;
+			background-color: transparent;
+			
+			> .portlet-header {
+				.portlet-title-text{
+					white-space: initial;
+				}
+			}
+
+			> .portlet-content-container > .portlet-body {
+				.component-title {
+					display: none;
+				}
+				.portlet-title-text {
+					white-space: normal;
+				}
+			}
+	
+			> .portlet-content-container > .portlet-body > .taglib-categorization-filter {
+				display: none;
+			}
+		}
+
+	}
+}
+
+.portlet-static {
+
+	&:not(.portlet-decorate):not(.portlet-barebone) {
+
+		> .portlet > .portlet-content {
+			padding: 0;
+			
+			> .portlet-header {
+				display: none;
+			}
+
+			> .portlet-content-container > .portlet-body > .taglib-categorization-filter {
+				display: none;
+			}
+		}
+
+	}
+}
+
+// Borderless
+.portlet-borderless {
+	> .portlet > .portlet-content {
+		padding: $portlet-borderless-padding;
+	}
+}
+
+
+// Decorate (card)
+.portlet-decorate,
+.portlet-decorate-titleless {
+
+	margin-bottom: map-get($spacers, 3);
+	
+	> .portlet {
+		
+		> .portlet-content {
+			
+		}
+
+	}
+
+}
+
+.portlet-decorate-titleless {
+	
+	> .portlet > .portlet-content {
+		
+		> .portlet-header {
+			display: none;
+		}
+
+		> .portlet-content-container > .portlet-body > .taglib-categorization-filter {
+			display: none;
+		}
+
+	}
+
+}
+
+// Barebone 
+.portlet-barebone,
+.portlet-barebone-titleless {
+
+	> .portlet > .portlet-content {
+		padding: 0;
+	}
+
+}
+.portlet-barebone-titleless {
+
+	> .portlet > .portlet-content {
+		
+		> .portlet-header {
+			display: none;
+		}
+
+		> .portlet-content-container > .portlet-body > .taglib-categorization-filter {
+			display: none;
+		}
+
+	}
+
+}
+
+
+
+
+/// Portlet dropzone 
+.empty.portlet-dropzone {
+	padding: 0;
+}
+
+.portlet-column {
+
+	&.yui3-dd-drop-active-valid {
+		.portlet-dropzone {
+			padding: 25px;
+		}
+	}
+
+}
+
+.portlet-height-100 {
+	
+	display: flex;
+	flex-flow: column;
+	flex-grow: 1;
+
+	> .portlet,
+	> .portlet > .portlet-boundary,
+	> .portlet > .portlet-boundary > .portlet,
+	> .portlet > .portlet-boundary > .portlet > .portlet-content,
+	> .portlet > .portlet-boundary > .portlet > .portlet-content > .portlet-content-container,
+	> .portlet > .portlet-boundary > .portlet > .portlet-content > .portlet-content-container > .portlet-body {
+		display: flex;
+		flex-flow: column;
+		flex-grow: 1;
+	}
+
+
+}
