@@ -1,6 +1,46 @@
 // Creates a fake pagination (only in frontend, so watch out if you have too many items)
 //
 
+/*
+
+    // USAGE: 
+
+    var myPaginator = new FrontPaginator({
+        itemsWrapperSelector: '.all-courses',
+        itemsSelector: '.card',
+        itemsPerPage: 4,
+        hidePaginatorIfSinglePage: true, // optional
+        showPreviousButton: false, // optional
+        showNextButton: false, // optional
+        templates: { // optional
+            paginator: (data) => { return `
+                <ul class="pagination" data-front-paginator>
+                </ul>
+            `; },
+
+            page: (data) => { return `
+                <li class="page-item" data-front-paginator-page="`+data.pageNumber+`" data-front-paginator-item>
+                    <a class="page-link" href="#">`+data.label+`</a>
+                </li>
+            `; },
+
+            previous: () => { return `
+                <<li data-front-paginator-page="previous" data-front-paginator-item>
+                    x
+                </li>
+            `; },
+
+            next: () => { return `
+                <li data-front-paginator-page="next" data-front-paginator-item>
+                    x
+                </li>
+            `; }
+        }
+    })
+
+*/
+
+
 import chunk from "../utilities/chunk";
 
 class FrontPaginator {
@@ -30,34 +70,48 @@ class FrontPaginator {
         this.templates = {
 
             paginator: (data) => { return `
-                <nav class="d-flex justify-content-center mt-4" js-front-paginator>
-                    <ul class="pagination" js-front-paginator-pages-wrapper>
+                <nav class="d-flex justify-content-center mt-4" data-front-paginator>
+                    <ul class="pagination" data-front-paginator-pages-wrapper>
                     </ul>
                 </nav>
             `; },
 
             page: (data) => { return `
-                <li class="page-item" data-front-paginator-page="`+data.pageNumber+`" js-front-paginator-item>
+                <li class="page-item" data-front-paginator-page="`+data.pageNumber+`" data-front-paginator-item>
                     <a class="page-link" href="`+data.url+`">`+data.label+`</a>
                 </li>
             `; },
 
             previous: () => { return `
-                <li class="page-item" data-front-paginator-page="previous" js-front-paginator-item>
+                <li class="page-item" data-front-paginator-page="previous" data-front-paginator-item>
                     <a class="page-link" href="#"><i class="icon-chevron-left"></i></a>
                 </li>
             `; },
 
             next: () => { return `
-                <li class="page-item" data-front-paginator-page="next" js-front-paginator-item>
+                <li class="page-item" data-front-paginator-page="next" data-front-paginator-item>
                     <a class="page-link" href="#"><i class="icon-chevron-right"></i></a>
                 </li>
             `; }
 
         }
 
+        this.customTemplates = getOption('templates', null);
+        if(this.customTemplates) {
+
+            let customTemplatesKeys = Object.keys(this.customTemplates);
+            customTemplatesKeys.forEach(templateKey => {
+
+                if(this.customTemplates[templateKey] && typeof this.customTemplates[templateKey] == "function") {
+                    this.templates[templateKey] = this.customTemplates[templateKey];
+                }
+
+            })
+
+        }   
+
         // Exec
-        this.init()
+        this.init();
         return this;
        
     }
@@ -86,8 +140,8 @@ class FrontPaginator {
             return;
         }
 
-        if(this.itemsWrapperNode.querySelector('*[js-front-paginator]')) {
-            let el = this.itemsWrapperNode.querySelector('*[js-front-paginator]');
+        if(this.itemsWrapperNode.querySelector('*[data-front-paginator]')) {
+            let el = this.itemsWrapperNode.querySelector('*[data-front-paginator]');
             el.parentNode.removeChild(el)   
         }
 
@@ -105,7 +159,10 @@ class FrontPaginator {
         })
     
         this.paginatorNode = this.getTemplateNode('paginator');
-        this.paginatorNodePagesWrapper = this.paginatorNode.querySelector('*[js-front-paginator-pages-wrapper]')
+        this.paginatorNodePagesWrapper = this.paginatorNode.querySelector('*[data-front-paginator-pages-wrapper]');
+        if(!this.paginatorNodePagesWrapper) {
+            this.paginatorNodePagesWrapper = this.paginatorNode;
+        }
         
         this.previousButtonNode = this.getTemplateNode('previous');
         this.nextButtonNode = this.getTemplateNode('next');
@@ -136,22 +193,35 @@ class FrontPaginator {
                 this.paginatorNodePagesWrapper.appendChild(this.nextButtonNode);
             }
 
-            var paginatorItemClickHandler = function (event) {
+            var paginatorItemClickHandler = event => {
 
                 event.preventDefault();
-                if(event.currentTarget.parentNode.getAttribute('data-front-paginator-page')) {
-                    var pageN = event.currentTarget.parentNode.getAttribute('data-front-paginator-page');
+                if(event.currentTarget.getAttribute('data-front-paginator-page')) {
+                    var pageN = event.currentTarget.getAttribute('data-front-paginator-page');
                 } else {
                     pageN = 1;
                 }
+
                 this.goToPage(pageN);
 
             };
 
+            var paginatorItemLinkClickHandler = event => {
+                event.preventDefault();
+            }
+
             // Bind click event
-            this.paginatorNodePagesWrapper.querySelectorAll('*[js-front-paginator-item] > a').forEach(pageLink => {
-                pageLink.removeEventListener('click', paginatorItemClickHandler);
-                pageLink.addEventListener('click', paginatorItemClickHandler);
+            this.paginatorNodePagesWrapper.querySelectorAll('*[data-front-paginator-item]').forEach(paginatorItem => {
+                paginatorItem.removeEventListener('click', paginatorItemClickHandler);
+                paginatorItem.addEventListener('click', paginatorItemClickHandler);
+
+                // Remove link event (if there is a link element (<a/>)
+                let itemLink = this.paginatorNodePagesWrapper.querySelector('a');
+                if(itemLink) {
+                    itemLink.removeEventListener('click', paginatorItemLinkClickHandler);
+                    itemLink.addEventListener('click', paginatorItemLinkClickHandler);
+                }
+
             })
 
             // All set! Add paginator node and go to first page
@@ -159,7 +229,9 @@ class FrontPaginator {
 
         }
 
-        this.goToPage(1);
+        if(this.itemsNodes.length > this.itemsPerPage) {
+            this.goToPage(1);
+        }
 
     }
 
@@ -169,7 +241,7 @@ class FrontPaginator {
         this.itemsNodes.forEach((item) =>{
             item.classList.add('d-none');
         })
-        this.itemsWrapperNode.querySelectorAll('*[js-front-paginator-item]').forEach((page) => {
+        this.itemsWrapperNode.querySelectorAll('*[data-front-paginator-item]').forEach((page) => {
             page.classList.remove('active');
         });
 
@@ -190,14 +262,14 @@ class FrontPaginator {
                 item.classList.remove('d-none');
             })
             this.currentPage = pageNumber;
-            this.itemsWrapperNode.querySelector('*[js-front-paginator-item][data-front-paginator-page="'+this.currentPage+'"]').classList.add('active')
+            this.itemsWrapperNode.querySelector('*[data-front-paginator-item][data-front-paginator-page="'+this.currentPage+'"]').classList.add('active')
             
         } else {
             let items = this.pagedItems[this.currentPage-1];
             items.forEach((item) => {
                 item.classList.remove('d-none');
             })
-            this.itemsWrapperNode.querySelector('*[js-front-paginator-item][data-front-paginator-page="'+this.currentPage+'"]').classList.add('active')
+            this.itemsWrapperNode.querySelector('*[data-front-paginator-item][data-front-paginator-page="'+this.currentPage+'"]').classList.add('active')
         }
 
         // Disable/enable previous and next button
@@ -215,6 +287,7 @@ class FrontPaginator {
 
     }
 
+
     previous() {
         this.goToPage(this.currentPage - 1)
     }
@@ -224,4 +297,4 @@ class FrontPaginator {
 
 }
 
-export default FrontPaginator;
+export default FrontPaginator
