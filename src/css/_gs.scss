@@ -4,15 +4,28 @@
 @import "gs/variables";
 @import "gs/utilities";
 @import "gs/globals";
+@import "gs/fonts";
 
 // To avoid side effects with Liferay
 .#{$prefix}:not(.liferay-instance) {
 
-  @import "gs/components";
-  
-  &#wrapper {
-    font-family: $project-font-family;
-    font-size: $project-body-size;
-    font-weight: $font-weight-normal;
-  }
+    @import "gs/components";
+     
+}
+
+#wrapper {
+    color: $color-darkest-blue;
+    padding: 0;
+    font-family: $font-family-primary;
+    min-width: $sm;
+
+    display: flex;
+    flex-direction: column;
+    min-height: calc(100vh);
+    justify-content: space-between;
+
+}
+
+#content {
+    flex-grow: 1;
 }

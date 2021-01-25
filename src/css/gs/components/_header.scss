@@ -1,0 +1,16 @@
+// Header
+// -
+
+
+// Rules
+
+.#{$prefix}-header {
+    height: 90px;
+    background-color: $color-white;
+    z-index: 999;
+    
+    &__container {
+        height: 100%;
+    }
+
+}

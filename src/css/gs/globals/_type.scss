@@ -1,52 +1,9 @@
-// Typography Settings
-// --
+h1, h2, h3, h4, h5, h6 {
 
-// @param variables
-// $type-name (or $type-primary-name, $type-secondary-name)
-// $type-dir
 
-$type-primary-name-trimmed: str-remove-whitespace($type-primary-name);
-// $type-secondary-name-trimmed: str-remove-whitespace($type-secondary-name);
-
-// Remove Whitespaces
-// -- 
-.remove-whitespace-checker {
-  &::after {
-    content:'#{$type-primary-name-trimmed}';
-  }
 }
 
-// If there is a secondary type:
-// .remove-whitespace-checker-2 {
-//   &::after {
-//     content:'#{$type-secondary-name-trimmed}';
-//   }
-// }
+p {
 
-// Font Face Generator
-// -- 
-@mixin setup-type-variation($type-name, $type-variation, $type-style, $type-weight) {
-  @font-face {
-    font-family: '#{$type-name}';
-    src: url('#{$type-name}-#{$type-variation}.eot');
-    src: local('#{$type-name} #{$type-variation}'), local('#{$type-name}-#{$type-variation}'),
-        url('#{$type-dir}/#{$type-name}-#{$type-variation}.eot?#iefix') format('embedded-opentype'),
-        url('#{$type-dir}/#{$type-name}-#{$type-variation}.woff') format('woff'),
-        url('#{$type-dir}/#{$type-name}-#{$type-variation}.ttf') format('truetype'),
-        url('#{$type-dir}/#{$type-name}-#{$type-variation}.svg##{$type-name}-#{$type-variation}') format('svg');
-    font-weight: $type-weight;
-    font-style: $type-style;
-  }
+    
 }
-
-// Create typography variations
-// -- 
-
-// Primary Type
-@include setup-type-variation($type-primary-name-trimmed, Regular, normal, 400);
-@include setup-type-variation($type-primary-name-trimmed, Bold, normal, 700);
-
-// Secondary Type (If there is)
-// @include setup-type-variation($type-secondary-name-trimmed, Regular, normal, 400);
-// @include setup-type-variation($type-secondary-name-trimmed, Bold, normal, 700);
-// @include setup-type-variation($type-secondary-name-trimmed, Light, normal, 300);

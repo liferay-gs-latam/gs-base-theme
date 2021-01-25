@@ -5,93 +5,22 @@
 // ----
 
 @mixin card-box($radius: $card-proj-radius-base, $shadow: $card-proj-shadow, $bg-color: $card-proj-default-bg-color, $padding: $card-proj-padding) {
-  border-radius: $radius;
-  box-shadow: $shadow;
-  background-color: $bg-color;
-  padding: $padding;
-  margin: 0 0 25px 0;
-}
-
-@mixin simple-animate($property:all, $duration:0.2s, $animation:ease-in) {
-  @include transition($property $duration $animation);
-}
-
-@mixin smooth-exceeded-content($shadow-smooth-color: $white) {
-  position: relative;
-
-  &::after {
-    box-shadow: 0 2px 24px 17px $shadow-smooth-color;
-    content: "";
-    height: 0;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    left: 0;
-  }
+    border-radius: $radius;
+    box-shadow: $shadow;
+    background-color: $bg-color;
+    padding: $padding;
+    margin: 0 0 25px 0;
 }
 
 @mixin alloy-font-awesomize($allow-fa-margin-right-value: .3em) {
-  font-family: 'fontawesome-alloy';
-  -webkit-font-smoothing: antialiased;
-  font-style: normal;
-  font-variant: normal;
-  font-weight: normal;
-  line-height: 1;
-  margin-right: $allow-fa-margin-right-value;
-  speak: none;
-  text-decoration: inherit;
-  text-transform: none;
-}
-
-// Align liferay portlet back button with title horizontally
-// Must be placed inside the portlet decorator scope css class.
-// Ex.: "calendar-portlet portlet-decorator" in DOM. Including this mixin inside
-// your ".calendar-portlet"
-@mixin align-portlet-title-with-back-button() {
-
-  .portlet-content {
-    position: relative;
-  }
-
-  .portlet-icon-back + .portlet-header .portlet-title-text {
-    margin-left: 45px;
-  }
-
-}
-
-// Apply back button UI to portlet back buttons
-// Must be placed inside the portlet decorator scope css class.
-// Ex.: "calendar-portlet portlet-decorator" in DOM. Including this mixin inside
-// your ".calendar-portlet"
-@mixin apply-back-button-to-portlet() {
-
-  .portlet-icon-back {
-    font-size: 14px;
-    background: $petrobras-green;
-    border-radius: 50%;
-    padding: 10px 14px;
-    color: $white !important;
-    position: absolute;
-    margin-top: 1rem;
-    margin-top: 1rem;
-    z-index: 2;
-    transition: margin-top 0.2s ease-in;
-
-    &:hover {
-      margin-top: 1.55rem;
-    }
-
-    .lexicon-icon-angle-left {
-      top: 9px;
-      position: absolute;
-      margin: 0 auto;
-      left: 0;
-      right: 0;
-      stroke: $white;
-      stroke-width: 2em;
-      width: 0.675rem;
-    }
-
-  }
-
+    font-family: 'fontawesome-alloy';
+    -webkit-font-smoothing: antialiased;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    line-height: 1;
+    margin-right: $allow-fa-margin-right-value;
+    speak: none;
+    text-decoration: inherit;
+    text-transform: none;
 }

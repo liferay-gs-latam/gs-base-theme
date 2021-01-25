@@ -1,88 +1,49 @@
 // Utility Classes
 // --
 
-// Flex grow
-.#{$prefix}-flex-grow-1, .flex-grow-1 {
-  flex-grow: 1;
+// Disable cursor interactions
+.disable-interaction {
+    cursor: default !important;
 }
 
-.#{$prefix}-flex-shrink-1, .flex-shrink-1 {
-  flex-shrink: 1;
+// Flex-grow utils
+.flex-grow-0 {
+    flex-grow: 0;
 }
 
-.#{$prefix}-flex-grow-0, .flex-grow-0 {
-  flex-grow: 0;
+.flex-grow-1 {
+    flex-grow: 1;
 }
 
-.#{$prefix}-flex-shrink-0, .flex-shrink-0 {
-  flex-shrink: 0;
-}
-
-// Transforms
-.rotate-90 {
-  transform: rotate(90deg);
-}
-
-.rotate-45 {
-  transform: rotate(45deg);
-}
-
-// Width: auto
-.w-auto {
-  width: auto !important;
-}
-
-// pop-in item
-.pop-in-effect {
-  animation-name: pop-in-effect;
-  animation-duration: .5s;
-  animation-iteration-count: 1;
-}
-
-@keyframes pop-in-effect {
-  0% {transform: scale(0); max-height: 0px;}
-  100% {transform: scale(1); max-height: 2000px;}
-}
-
-// pop-out item
-.pop-out-effect {
-  animation-name: pop-out-effect;
-  animation-duration: .5s;
-  animation-iteration-count: 1;
-}
-
-@keyframes pop-out-effect {
-  0% {transform: scale(1); max-height: 2000px;}
-  100% {transform: scale(0); max-height: 0px;}
+.flex-grow-2 {
+    flex-grow: 2;
 }
 
 
-// Text decoration none
-.text-decoration-none {
-  text-decoration: none !important;
+// Flex-shring utils
+.flex-shrink-0 {
+    flex-shrink: 0;
 }
 
-// Inline scroll
-.inline-scrolling {
+.flex-shrink-1 {
+    flex-shrink: 1;
+}
 
-  -ms-overflow-style: none;
-  overflow-x: auto;
-  padding-bottom: 5px;
+.flex-shrink-2 {
+    flex-shrink: 2;
+}
 
-  &__stack {
-    display: inline-flex;
-    flex-flow: row nowrap;
-  }
+
+// Affix
+.affix {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
 
 }
 
-.sticky {
-  position: -webkit-sticky;
-  position: sticky;
-  top: 1.5rem;
-}
-
-// Pipe separator
-.#{$prefix}-pipe--right {
-  border-right: 1px solid #ececec;
+.lh-1 {
+    line-height:1.1 ;
 }

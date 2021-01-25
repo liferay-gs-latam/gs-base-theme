@@ -1,10 +1,10 @@
 // Project Globals
 // --
 
-// Typography
-@import "globals/type";
 
-// Common text
-@import "globals/text";
-@import "globals/link";
+@import "globals/colors";
+@import "globals/ul";
 
+@import "globals/portlet-decorators";
+@import "globals/portlet-breadcrumb";
+@import "globals/pagination";
