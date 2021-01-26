@@ -23,13 +23,6 @@
 
 			<section id="content" class="container-fluid px-0">
 
-				<#if show_breadcrumbs>
-					<div class="secondary-container">
-						<#assign breadcrumbPortletPreferences = {"portletSetupPortletDecoratorId": "barebone-titleless"} />
-						<@liferay.breadcrumbs default_preferences=freeMarkerPortletPreferences.getPreferences(breadcrumbPortletPreferences) />
-					</div>
-				</#if>
-
 				<h2 class="hide-accessible" role="heading" aria-level="1">${the_title}</h2>
 
 				<#if selectable>
