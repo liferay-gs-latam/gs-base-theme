@@ -1,2 +1,1 @@
 // Liferay main.js
-

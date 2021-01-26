@@ -7,7 +7,18 @@ $prefix: "gs";
 $lfr-controlmenu-bar-height: 48px;
 $lfr-controlmenu-bar-height-lg: 56px;
 $grid-gutter-width: 36px;
+$spacer: 1rem;
 
+// Spacers
+$spacers: (
+  0: 0,
+  1: ($spacer * .25),
+  2: ($spacer * .5),
+  3: $spacer,
+  4: ($spacer * 1.5),
+  5: ($spacer * 3),
+  6: ($spacer * 5)
+);
 
 // Grid Breakpoints, spacers and gutters
 $grid-breakpoints: (
@@ -20,11 +31,10 @@ $grid-breakpoints: (
 );
 
 $container-max-widths: (
-	sm: 100%,
+	sm: 375px,
 	md: 1044px,
 	lg: 1278px,
 	xl: 1280px
-
 );
 
 
@@ -47,6 +57,7 @@ $lg-max: map-get($grid-breakpoints, xl) - 1;
 // Font variables
 
 $font-family-primary: sans-serif;
+$line-height-base: 1.333;
 
 $font-weight-thin:      100;
 $font-weight-light:     300;
@@ -55,4 +66,7 @@ $font-weight-medium:    500;
 $font-weight-semibold:  600;
 $font-weight-bold:      700;
 
-$line-height-base: 1.333;
+
+
+// Box shadows
+$default-box-shadow: 3px 3px 6px 0px rgba(0, 0, 0, 0.333);

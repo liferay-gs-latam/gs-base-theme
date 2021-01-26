@@ -21,8 +21,7 @@
 
 			<#include "${full_templates_path}/header.ftl" />
 
-				
-			<section id="content" class="container-fluid">
+			<section id="content" class="container-fluid px-0">
 
 				<#if show_breadcrumbs>
 					<div class="secondary-container">
@@ -54,8 +53,6 @@
 		</div>
 
 		<script type="text/javascript" src="${javascript_folder}/dist/bundle.js?<!--@timestamp-->"></script>
-		<script type="text/javascript" src="${javascript_folder}/vendors/slick-slider/slick-slider.js?<!--@timestamp-->"></script>
-		<script type="text/javascript" src="${javascript_folder}/vendors/mask/jquery.mask.min.js"></script>
 		
 	</body>
 

@@ -12,9 +12,7 @@ $color-white: #FFF;
 $color-black: #000;
 
 $color-gray: #707070;
-$color-darker-gray: #555453;
-$color-darker-middle-gray: #686868;
-$color-middle-gray: #A3A8AA;
+$color-dark-gray: #2f2f2f;
 $color-light-gray: #F3F2F9;
 $color-lightest-gray: #F2F2F2;
 $color-darkest-gray: #1C1C1C;
@@ -42,7 +40,6 @@ $theme-colors: map-merge((
   gray: $color-gray,
   blue: $color-blue,
   yellow: $color-yellow
-
 
 ), $theme-colors);
 
