@@ -5,12 +5,21 @@
 // Rules
 
 .#{$prefix}-header {
-    height: 90px;
+
+    width: 100%;
     background-color: $color-white;
-    z-index: 999;
-    
-    &__container {
-        height: 100%;
+    z-index: 988;
+    box-shadow: $default-box-shadow;
+
+    &__logo {
+        > img {
+            height: 90px;
+        }
+    }
+
+    &.fixed {
+        position: fixed;
     }
 
 }
+

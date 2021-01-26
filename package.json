@@ -10,25 +10,26 @@
 		"fontAwesome": true,
 		"screenshot": "",
 		"templateLanguage": "ftl",
-		"version": "7.2"
+		"version": "7.3"
 	},
 	"devDependencies": {
+		"compass-mixins": "0.12.10",
+		"gulp": "4.0.2",
+		"liferay-frontend-common-css": "1.0.4",
+		"liferay-frontend-theme-styled": "5.0.0",
+		"liferay-frontend-theme-unstyled": "5.0.0",
+		"liferay-theme-tasks": "^10.0.2",
+		"liferay-font-awesome": "3.4.0",
 		"@babel/core": "^7.10.3",
 		"@babel/preset-env": "^7.10.3",
 		"babel-loader": "^8.1.0",
-		"compass-mixins": "0.12.10",
 		"del": "^5.1.0",
-		"gulp": "3.9.1",
 		"gulp-babel": "^8.0.0-beta.2",
 		"gulp-concat": "^2.6.1",
 		"gulp-string-replace": "^1.1.2",
-		"liferay-font-awesome": "3.4.0",
-		"liferay-frontend-common-css": "1.0.4",
-		"liferay-frontend-theme-styled": "4.0.21",
-		"liferay-frontend-theme-unstyled": "4.0.17",
-		"liferay-theme-tasks": "^9.5.1",
 		"webpack": "^4.43.0",
-		"webpack-stream": "^5.2.1"
+		"webpack-stream": "^5.2.1",
+		"lfrgs-js-utils": "git+https://github.com/liferay-gs-latam/lfrgs-js-utils.git"
 	},
 	"scripts": {
 		"init": "gulp init",

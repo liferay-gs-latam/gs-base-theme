@@ -18,11 +18,11 @@ liferayThemeTasks.registerTasks({
 	gulp: gulp,
 	hookFn: function(gulp) {
 
-
 		gulp.hook('before:build:src', function(done) {
 
 			return gulp.src('src/js/app.js')
 			.pipe(webpack({
+				mode: "development",
 				output: {
 					filename: "bundle.js"
 				},
@@ -53,7 +53,7 @@ liferayThemeTasks.registerTasks({
 
 			return gulp.src(["./src/templates/portal_normal.ftl"])
 			.pipe(replace('<!--@timestamp-->', new Date().valueOf()))
-			.pipe(gulp.dest('./build/templates/'))		
+			.pipe(gulp.dest('./build/templates/'))
 			.on('end', done);
 
 		});
